@@ -51,6 +51,21 @@ const clientConfig = {
                 'css-loader',
                 'sass-loader',
             ]
+        },
+        {
+            test: /\.css$/,
+            use: [
+                'style-loader',
+                'css-loader',
+            ]
+        },
+        {
+            test: /\.(png|jpe?g|gif)$/i,
+            loader: 'file-loader',
+            options: {
+                outputPath: path.join('../assets'),
+                publicPath: '/assets'
+            }
         }
       ]
     },

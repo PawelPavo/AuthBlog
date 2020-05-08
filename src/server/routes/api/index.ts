@@ -1,8 +1,13 @@
-import * as express from 'express';
-import blogsRouter from './blogs'
+import {Router} from 'express';
+import blogsRouter from './blogs';
+import tagsRouter from './tags';
+import blogTagsRouter from './blogTags';
 
-const router = express.Router();
 
-router.use('/blogs', blogsRouter);
+const router = Router()
+
+router.use('/blogs', blogsRouter)
+router.use('/tags', tagsRouter)
+router.use('/blogTags', blogTagsRouter)
 
 export default router;

@@ -8,7 +8,7 @@ passport.use(new LocalStrategy.Strategy({ usernameField: 'email' }, async (email
         const [user] = await db.users.find('email', email)
         if (user?.password && comparePassword(password, user.password)) {
             delete user.password;
-            done(null,user)
+            done(null, user)
         } else {
             done(null, false)
         }
